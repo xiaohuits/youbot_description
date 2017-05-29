@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"youbot_link_0" [label="youbot_link_0"];
+"youbot_link_1" [label="youbot_link_1"];
+"youbot_link_2" [label="youbot_link_2"];
+"youbot_link_3" [label="youbot_link_3"];
+"youbot_link_4" [label="youbot_link_4"];
+"youbot_link_5" [label="youbot_link_5"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"youbot_link_0" -> "youbot_joint_1" [label="xyz: 0.024 0 0.096 \nrpy: 0 -0 2.96706"]
+"youbot_joint_1" -> "youbot_link_1"
+"youbot_link_1" -> "youbot_joint_2" [label="xyz: 0.033 0 0.019 \nrpy: 0 -1.13446 0"]
+"youbot_joint_2" -> "youbot_link_2"
+"youbot_link_2" -> "youbot_joint_3" [label="xyz: 0 0 0.155 \nrpy: 3.14159 0.593412 3.14159"]
+"youbot_joint_3" -> "youbot_link_3"
+"youbot_link_3" -> "youbot_joint_4" [label="xyz: 0 0 0.135 \nrpy: 3.14159 -1.35263 3.14159"]
+"youbot_joint_4" -> "youbot_link_4"
+"youbot_link_4" -> "youbot_joint_5" [label="xyz: -0.002 0 0.13 \nrpy: 0 -0 2.92343"]
+"youbot_joint_5" -> "youbot_link_5"
+}
