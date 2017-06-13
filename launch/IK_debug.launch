@@ -1,0 +1,18 @@
+<launch>
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_description)/urdf/youbot_arm/view_arm.urdf.xacro'"/>
+<param name="robot_description_sim" command="$(find xacro)/xacro.py '$(find youbot_description)/urdf/youbot_arm/view_arm1.urdf.xacro'"/>
+<param name="use_tf_static" value="false"/>
+<node name="youbot_kinematics_debug" pkg="youbot_kinematics" type="youbot_kinematics_debug"/>
+<node name="youbot_target_publisher" pkg="youbot_kinematics" type="youbot_target_publisher"/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+<node name="robot_state_publisher_sim" pkg="robot_state_publisher" type="robot_state_publisher">
+  <remap from="joint_states" to="joint_states_target"/>
+  <remap from="robot_description" to="robot_description_sim"/>
+  <remap from="tf" to="tf_sim"/>
+</node>
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find youbot_description)/rviz/rviz_real.rviz" required="true"/>
+<node name="rviz_sim" pkg="rviz" type="rviz" args="-d $(find youbot_description)/rviz/rviz_sim.rviz" required="true">
+  <remap from="tf" to="tf_sim"/>
+  <remap from="robot_description" to="robot_description_sim"/>
+</node>
+</launch>

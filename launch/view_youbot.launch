@@ -1,5 +1,5 @@
 <launch>
-<param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_description)/urdf/youbot_arm/view_arm.urdf.xacro'"/>
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_description)/robots/youbot.urdf.xacro'"/>
 <param name="use_gui" value="true"/>
 <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
